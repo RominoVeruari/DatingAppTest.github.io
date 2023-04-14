@@ -1,40 +1,86 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
-    <title>Profile Setup - Dating App</title>
+
+    <title>Profile - Dating App</title>
     <!-- <link rel="stylesheet" href="../public/css/style.css"> -->
-  </head>
-  <body>
-    <h1>Profile Setup</h1>
+</head>
+
+<body>
     <form id="profile-setup-form">
-      <label for="first-name">First Name:</label>
-      <input type="text" id="first-name" name="first-name"><br>
+        <h1>Profile</h1>
+        <div>
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" value="" disabled><br>
+        </div>
+        <div>
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" value="" disabled><br>
 
-      <label for="last-name">Last Name:</label>
-      <input type="text" id="last-name" name="last-name"><br>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="" disabled><br>
+        </div>
+        <div>
 
-      <label for="gender">Gender:</label>
-      <select id="gender" name="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select><br>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div>
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday">
+        </div>
+        <div>
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required onkeyup="suggestState()">
+            <ul id="state-suggestions"></ul>
+        </div>
+        <div>
 
-      <label for="birthday">Birthday:</label>
-      <input type="date" id="birthday" name="birthday"><br>
+            <label for="sexual-orientation">Sexual Orientation:</label>
+            <select id="sexual-orientation" name="sexual-orientation">
+                <option value="Straight">Straight</option>
+                <option value="Heterosexual">Heterosexual</option>
+                <option value="Bisexual">Bisexual</option>
+                <option value="Pansexual">Pansexual</option>
+                <!-- Add more options as required -->
+            </select>
+        </div>
+        <div>
+            <label for="profile-picture">Profile Picture:</label>
+            <img id="profile-picture" src="" alt="">
+            <button id="change-profile-picture">Change profile picture</button>
+            <input type="file" id="profile-picture-input" style="display: none;">
+        </div>
 
-      <label for="city">City:</label>
-      <input type="text" id="city" name="city"><br>
-
-      <label for="state">State:</label>
-      <input type="text" id="state" name="state"><br>
-
-      <label for="country">Country:</label>
-      <input type="text" id="country" name="country"><br>
-
-      <button type="submit">Save</button>
+        <div>
+            <label for="photo-gallery">Photo Gallery:</label>
+            <div id="photo-gallery"></div>
+            <button id="add-photo">Add new photo</button>
+            <button id="delete-photo">Delete selected photo(s)</button>
+        </div>
+        <div>
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio" required></textarea>
+        </div>
+        <div>
+            <label for="interests">Interests:</label>
+            <textarea type="text" id="interests" name="interests"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Save Profile</button>
     </form>
-    <script src="../public/js/profile_setup.js"></script>
-  </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <script src="./js/profile_setup.js"></script>
+    <script src="./js/states_name.js"></script>
+
+</body>
+
 </html>

@@ -24,7 +24,7 @@ form.addEventListener('submit', async (e) => {
     });
 
     if (response.ok) {
-      // sessionStorage.setItem('userId', user_Id);
+      
       window.location.href = '/home';
     } else {
       throw new Error('Invalid email or password');
